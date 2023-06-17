@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="80dp"/>
 
-    <nx.peter.app.android_ui.view.StyledScrollableText
+    <nx.peter.app.android_ui.view.StyledText
             app:x="10dp"
             app:y="131dp"
             android:textSize="22sp"
