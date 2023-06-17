@@ -45,7 +45,6 @@ public class TextTabView extends AView<TextTabView> {
 		layout = findViewById(R.id.layout);
 		reset();
 
-
 	}
 
 	protected void reset() {
@@ -58,7 +57,7 @@ public class TextTabView extends AView<TextTabView> {
 		isAllTab = false;
 		style = TabStyle.PartialLink;
 		font = layout.getFont();
-		layout.setVerticalAlignment(StyledView.VerticalAlignment.Center);
+		layout.setAlignment(StyledView.Alignment.CenterLeft);
 		fontStyle = font.getStyle();
 
 		adapter = new IAdapter(listener);
@@ -66,7 +65,7 @@ public class TextTabView extends AView<TextTabView> {
 		dListener = adapter -> setup();
 		// setTextSize(16);
 
-		setTabTexts("nx", "peter", "app", "mathapi");
+		setTabTexts("nx", "peter", "app", "math-api");
 		setTabDivider(Divider.Slash);
 		setBackground(Background.Black);
 	}

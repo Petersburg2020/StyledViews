@@ -5,7 +5,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-    <nx.peter.app.ui.view.MultiActionText
+    <nx.peter.app.android_ui.view.StyledText
             android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"/>

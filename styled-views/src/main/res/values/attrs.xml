@@ -20,6 +20,8 @@
         <attr name="subFontText" format="string"/>
         <attr name="subSizeText" format="string"/>
         <attr name="subColor" format="color"/>
+        <attr name="subImageText" format="string"/>
+        <attr name="subImage" format="reference"/>
         <attr name="subSize" format="dimension"/>
         <attr name="subFont" format="enum">
             <enum name="serif" value="0"/>
@@ -336,6 +338,10 @@
             <enum name="horizontal" value="1" />
             <enum name="both" value="2" />
         </attr>
+    </declare-styleable>\
+
+    <declare-styleable name="TextTabView">
+
     </declare-styleable>
 
 </resources>

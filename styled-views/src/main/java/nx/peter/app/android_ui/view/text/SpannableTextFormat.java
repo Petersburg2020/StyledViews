@@ -2,6 +2,7 @@ package nx.peter.app.android_ui.view.text;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -324,6 +325,16 @@ public class SpannableTextFormat {
         return new SpanText(span, texts);
     }
 
+
+    @NonNull
+    public static SpanText getImageSpan(SpannableString span, CharSequence text, Drawable image, float size, @NonNull CharSequence... subs) {
+        List<TextImage> images = new ArrayList<>();
+        for (CharSequence sub : subs) {
+            int start = text.toString().indexOf(sub.toString());
+            images.add(new TextImage(sub, image, size, start));
+        }
+        return getImageSpan(span, text, images);
+    }
 
     @NonNull
     public static SpanText getImageSpan(SpannableString span, CharSequence text, Context context, int image, float size, @NonNull CharSequence... subs) {

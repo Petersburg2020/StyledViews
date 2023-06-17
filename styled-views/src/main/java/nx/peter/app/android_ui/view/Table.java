@@ -3,7 +3,7 @@ package nx.peter.app.android_ui.view;
 import android.view.View;
 import androidx.annotation.NonNull;
 
-public interface ITable<T extends View> extends IView<T> {
+public interface Table<T extends View> extends IView<T> {
     int getColumnCount();
 
     void setRowCellsData(@NonNull Object... data);
@@ -26,7 +26,7 @@ public interface ITable<T extends View> extends IView<T> {
 
         int getRow();
 
-        ITable<?> getTable();
+        Table<?> getTable();
     }
 
     interface OnCellClickedListener {

@@ -187,7 +187,7 @@ public class StyledEditor extends AStyledEditor<StyledEditor> {
             } catch (Exception ignored) {
             }
 
-            a.close();
+            a.recycle();
         }
     }
 

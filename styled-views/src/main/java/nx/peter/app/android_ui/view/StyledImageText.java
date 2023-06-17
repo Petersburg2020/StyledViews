@@ -13,12 +13,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.annotation.*;
 import androidx.core.content.ContextCompat;
-import nx.peter.app.android_ui.view.util.Size;
-import nx.peter.app.styled_views.R;
 import nx.peter.app.android_ui.view.text.*;
 import nx.peter.app.android_ui.view.text.FontFamily.Family;
 import nx.peter.app.android_ui.view.text.FontFamily.Style;
 import nx.peter.app.android_ui.view.util.Colors;
+import nx.peter.app.android_ui.view.util.Size;
+import nx.peter.app.styled_views.R;
 
 import java.util.List;
 
@@ -38,12 +38,11 @@ public class StyledImageText extends AView<StyledImageText> implements StyledVie
         super(context, attrs);
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void init(AttributeSet attrs) {
         inflate(getContext(), R.layout.view_image_text, this);
         imageView = findViewById(R.id.image);
-        view = findViewById(R.id.multi_text);
+        view = findViewById(R.id.styled_text);
         layout = findViewById(R.id.layout);
 
         Resources res = Resources.getSystem();
@@ -114,7 +113,6 @@ public class StyledImageText extends AView<StyledImageText> implements StyledVie
             }
 
             a.recycle();
-            a.close();
         }
 
         reset();
@@ -653,12 +651,22 @@ public class StyledImageText extends AView<StyledImageText> implements StyledVie
     }
 
     @Override
+    public void addSubImages(@NonNull Drawable image, float size, CharSequence... subs) {
+        view.addSubImages(image, size, subs);
+    }
+
+    @Override
     public void addSubImages(int image, int tint, float size, CharSequence... subs) {
         view.addSubImages(image, tint, size, subs);
     }
 
     @Override
     public void addSubImages(int image, CharSequence... subs) {
+        view.addSubImages(image, subs);
+    }
+
+    @Override
+    public void addSubImages(@NonNull Drawable image, CharSequence... subs) {
         view.addSubImages(image, subs);
     }
 

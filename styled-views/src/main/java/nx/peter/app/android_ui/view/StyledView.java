@@ -1,5 +1,6 @@
 package nx.peter.app.android_ui.view;
 
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.*;
 import android.view.View;
@@ -118,9 +119,13 @@ public interface StyledView<V extends View> extends IView<V> {
 
     void addSubImages(@DrawableRes int image, CharSequence... subs);
 
+    void addSubImages(@NonNull Drawable image, CharSequence... subs);
+
     void addSubImages(@DrawableRes int image, @ColorInt int tint, CharSequence... subs);
 
     void addSubImages(@DrawableRes int image, float size, CharSequence... subs);
+
+    void addSubImages(@NonNull Drawable image, float size, CharSequence... subs);
 
     void addSubImages(@DrawableRes int image, @ColorInt int tint, float size, CharSequence... subs);
 

@@ -164,7 +164,7 @@ public class StyledScrollableEditor extends AStyledScrollableView<StyledScrollab
             } catch (Exception ignored) {
             }
 
-            a.close();
+            a.recycle();
         }
     }
 

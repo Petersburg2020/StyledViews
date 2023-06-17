@@ -27,7 +27,7 @@ public class ScrollingText extends AStyledText<ScrollingText> {
         reset();
 
         if (attrs != null) {
-            TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.ScrollingText);
+            TypedArray a = obtainStyledAttributes(attrs, R.styleable.ScrollingText);
 
             try {
                 float size = a.getDimensionPixelSize(R.styleable.ScrollingText_android_textSize, (int) Dimens.toSp(16));
@@ -66,7 +66,6 @@ public class ScrollingText extends AStyledText<ScrollingText> {
             } catch (Exception ignored) {}
 
             a.recycle();
-            a.close();
         }
     }
 

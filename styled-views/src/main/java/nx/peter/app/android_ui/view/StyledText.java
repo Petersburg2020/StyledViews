@@ -2,6 +2,7 @@ package nx.peter.app.android_ui.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import nx.peter.app.styled_views.R;
 import nx.peter.app.android_ui.view.util.Dimens;
@@ -126,6 +127,21 @@ public class StyledText extends AStyledText<StyledText> {
             }
 
             try {
+                int font = a.getInt(R.styleable.StyledText_subFont, -1);
+                String text = a.getString(R.styleable.StyledText_subImageText);
+                if (font > -1 && text != null)
+                    addSubFonts(font, text);
+            } catch (Exception ignored) {
+            }
+
+            try {
+                Drawable image = a.getDrawable(R.styleable.StyledText_subImage);
+                String text = a.getString(R.styleable.StyledText_subImageText);
+                if (image != null && text != null)
+                    addSubImages(image, text);
+            } catch (Exception ignored) {}
+
+            try {
                 int padding = a.getDimensionPixelOffset(R.styleable.StyledEditor_view_padding, 0);
                 setPadding(padding);
             } catch (Exception ignored) {
@@ -173,7 +189,7 @@ public class StyledText extends AStyledText<StyledText> {
             } catch (Exception ignored) {
             }
 
-            a.close();
+            a.recycle();
         }
         // reset();
     }

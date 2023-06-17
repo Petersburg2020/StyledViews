@@ -28,7 +28,7 @@
                 android:layout_height="39dp"
                 android:textSize="10sp"
                 app:alignment="center_left"
-                android:id="@+id/multi_text"/>
+                android:id="@+id/styled_text"/>
             
     </LinearLayout>
 

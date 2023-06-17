@@ -91,6 +91,30 @@ abstract class AStyledScrollableView<I extends AStyledScrollableView, T extends 
         }
     }
 
+    protected void addSubFonts(int index, String text) {
+        switch (index) {
+            case 0: addSubFonts(Font.CANTERBURY, text); break;
+            case 1: addSubFonts(Font.JOSEFIN_SANS_BOLD, text); break;
+            case 2: addSubFonts(Font.JOSEFIN_SANS_BOLD_ITALIC, text); break;
+            case 3: addSubFonts(Font.JOSEFIN_SANS_EXTRA_BOLD, text); break;
+            case 4: addSubFonts(Font.JOSEFIN_SANS_EXTRA_BOLD_ITALIC, text); break;
+            case 5: addSubFonts(Font.JOSEFIN_SANS_ITALIC, text); break;
+            case 6: addSubFonts(Font.JOSEFIN_SANS_LIGHT, text); break;
+            case 7: addSubFonts(Font.JOSEFIN_SANS_LIGHT_ITALIC, text); break;
+            case 8: addSubFonts(Font.JOSEFIN_SANS_REGULAR, text); break;
+            case 9: addSubFonts(Font.JOSEFIN_SANS_SEMI_BOLD, text); break;
+            case 10: addSubFonts(Font.JOSEFIN_SANS_SEMI_BOLD_ITALIC, text); break;
+            case 11: addSubFonts(Font.PAJAMA_PANTS, text); break;
+            case 12: addSubFonts(Font.PAJAMA_PANTS_BOLD, text); break;
+            case 13: addSubFonts(Font.PAJAMA_PANTS_LIGHT, text); break;
+            case 14: addSubFonts(Font.ROWDIES_BOLD, text); break;
+            case 15: addSubFonts(Font.ROWDIES_REGULAR, text); break;
+            case 16: addSubFonts(Font.RUSTHINA, text); break;
+            case 17: addSubFonts(Font.THE_ARTISAN_MARKER_SERIF, text); break;
+            case 18: addSubFonts(Font.TRESDIAS, text);
+        }
+    }
+
     protected void setFontFamily(int font) {
         switch (font) {
             case 0:
@@ -832,6 +856,13 @@ abstract class AStyledScrollableView<I extends AStyledScrollableView, T extends 
     }
 
     @Override
+    public void addSubImages(@NonNull Drawable image, float size, CharSequence... subs) {
+        vView.addSubImages(image, size, subs);
+        hView.addSubImages(image, size, subs);
+        vhView.addSubImages(image, size, subs);
+    }
+
+    @Override
     public void addSubImages(int image, int tint, float size, CharSequence... subs) {
         vView.addSubImages(image, tint, size, subs);
         hView.addSubImages(image, tint, size, subs);
@@ -840,6 +871,11 @@ abstract class AStyledScrollableView<I extends AStyledScrollableView, T extends 
 
     @Override
     public void addSubImages(int image, CharSequence... subs) {
+        addSubImages(image, getTextSize(), subs);
+    }
+
+    @Override
+    public void addSubImages(@NonNull Drawable image, CharSequence... subs) {
         addSubImages(image, getTextSize(), subs);
     }
 

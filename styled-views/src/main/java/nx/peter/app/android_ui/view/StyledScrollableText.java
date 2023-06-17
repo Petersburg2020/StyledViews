@@ -167,7 +167,7 @@ public class StyledScrollableText extends AStyledScrollableView<StyledScrollable
             } catch (Exception ignored) {
             }
 
-            a.close();
+            a.recycle();
         }
     }
 

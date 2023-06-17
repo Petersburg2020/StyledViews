@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class StyledTable extends AView<StyledTable> implements ITable<StyledTable> {
+public class StyledTable extends AView<StyledTable> implements Table<StyledTable> {
     protected TableView table;
     protected TableAdapter adapter;
     protected int columnCount;
@@ -43,8 +43,12 @@ public class StyledTable extends AView<StyledTable> implements ITable<StyledTabl
 
     protected void reset() {
         columnCount = 4;
-        columnHeadings = new ArrayList<>();
-        rowHeadings = new ArrayList<>();
+        columnHeadings = Arrays.asList(
+                "S/N", "Name", "Phone No.", "Address"
+        );
+        rowHeadings = Arrays.asList(
+                "1", "2", "3", "4", "5"
+        );
         cells = new ArrayList<>();
         adapter = new TableAdapter(columnHeadings, rowHeadings, cells);
         table.setAdapter(adapter);

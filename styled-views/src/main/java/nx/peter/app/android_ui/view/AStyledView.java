@@ -17,6 +17,7 @@ import androidx.annotation.IntRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import nx.peter.app.android_ui.view.text.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -105,6 +106,30 @@ abstract class AStyledView<A extends AStyledView, T extends TextView> extends AV
             case 16: setFont(Font.RUSTHINA); break;
             case 17: setFont(Font.THE_ARTISAN_MARKER_SERIF); break;
             case 18: setFont(Font.TRESDIAS);
+        }
+    }
+
+    protected void addSubFonts(int index, String text) {
+        switch (index) {
+            case 0: addSubFonts(Font.CANTERBURY, text); break;
+            case 1: addSubFonts(Font.JOSEFIN_SANS_BOLD, text); break;
+            case 2: addSubFonts(Font.JOSEFIN_SANS_BOLD_ITALIC, text); break;
+            case 3: addSubFonts(Font.JOSEFIN_SANS_EXTRA_BOLD, text); break;
+            case 4: addSubFonts(Font.JOSEFIN_SANS_EXTRA_BOLD_ITALIC, text); break;
+            case 5: addSubFonts(Font.JOSEFIN_SANS_ITALIC, text); break;
+            case 6: addSubFonts(Font.JOSEFIN_SANS_LIGHT, text); break;
+            case 7: addSubFonts(Font.JOSEFIN_SANS_LIGHT_ITALIC, text); break;
+            case 8: addSubFonts(Font.JOSEFIN_SANS_REGULAR, text); break;
+            case 9: addSubFonts(Font.JOSEFIN_SANS_SEMI_BOLD, text); break;
+            case 10: addSubFonts(Font.JOSEFIN_SANS_SEMI_BOLD_ITALIC, text); break;
+            case 11: addSubFonts(Font.PAJAMA_PANTS, text); break;
+            case 12: addSubFonts(Font.PAJAMA_PANTS_BOLD, text); break;
+            case 13: addSubFonts(Font.PAJAMA_PANTS_LIGHT, text); break;
+            case 14: addSubFonts(Font.ROWDIES_BOLD, text); break;
+            case 15: addSubFonts(Font.ROWDIES_REGULAR, text); break;
+            case 16: addSubFonts(Font.RUSTHINA, text); break;
+            case 17: addSubFonts(Font.THE_ARTISAN_MARKER_SERIF, text); break;
+            case 18: addSubFonts(Font.TRESDIAS, text);
         }
     }
 
@@ -848,6 +873,11 @@ abstract class AStyledView<A extends AStyledView, T extends TextView> extends AV
     }
 
     @Override
+    public void addSubImages(@NonNull Drawable image, float size, CharSequence... subs) {
+        addSubTexts(SpannableTextFormat.getImageSpan(span, text, image, size, subs).texts);
+    }
+
+    @Override
     public void addSubImages(int image, float size, CharSequence... subs) {
         addSubTexts(SpannableTextFormat.getImageSpan(span, text, getContext(), image, size, subs).texts);
     }
@@ -855,6 +885,11 @@ abstract class AStyledView<A extends AStyledView, T extends TextView> extends AV
     @Override
     public void addSubImages(int image, int tint, float size, CharSequence... subs) {
         addSubTexts(SpannableTextFormat.getImageSpan(span, text, getContext(), image, tint, size, subs).texts);
+    }
+
+    @Override
+    public void addSubImages(@NonNull Drawable image, CharSequence... subs) {
+        addSubImages(image, getTextSize(), subs);
     }
 
     @Override
