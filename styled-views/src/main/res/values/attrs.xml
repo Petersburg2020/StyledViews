@@ -1,0 +1,341 @@
+<resources>
+
+    <declare-styleable name="StyledImageText">
+        <attr name="android:text"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr name="android:src"/>
+        <attr name="android:paddingVertical"/>
+        <attr name="isWrapped" format="boolean"/>
+        <attr name="image_size" format="dimension"/>
+        <attr name="image_height" format="dimension"/>
+        <attr name="image_width" format="dimension"/>
+        <attr name="image_text_margin" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="StyledText">
+        <attr name="link" format="string"/>
+        <attr name="urlText" format="string"/>
+        <attr name="subColorText" format="string"/>
+        <attr name="subFontText" format="string"/>
+        <attr name="subSizeText" format="string"/>
+        <attr name="subColor" format="color"/>
+        <attr name="subSize" format="dimension"/>
+        <attr name="subFont" format="enum">
+            <enum name="serif" value="0"/>
+            <enum name="sans" value="1"/>
+            <enum name="monospace" value="2"/>
+            <enum name="serif_bold" value="3"/>
+            <enum name="sans_bold" value="4"/>
+            <enum name="monospace_bold" value="5"/>
+            <enum name="serif_italic" value="6"/>
+            <enum name="sans_italic" value="7"/>
+            <enum name="monospace_italic" value="8"/>
+        </attr>
+        <attr name="view_padding" format="dimension" />
+        <attr name="view_padding_start" format="dimension" />
+        <attr name="view_padding_end" format="dimension" />
+        <attr name="view_padding_top" format="dimension" />
+        <attr name="view_padding_bottom" format="dimension" />
+        <attr name="view_padding_horizontal" format="dimension" />
+        <attr name="view_padding_vertical" format="dimension" />
+        <attr name="scale_x" format="float"/>
+        <attr name="scale_y" format="float"/>
+        <attr name="scale" format="float"/>
+        <attr name="hintColorAlpha" format="integer"/>
+        <attr name="textColorAlpha" format="integer"/>
+        <attr name="textColor" format="enum">
+            <enum value="0" name="black"/>
+            <enum value="1" name="gray"/>
+            <enum value="2" name="white"/>
+            <enum value="3" name="red" />
+            <enum value="4" name="blue" />
+            <enum value="5" name="green" />
+            <enum value="6" name="yellow" />
+            <enum value="7" name="orange" />
+            <enum value="8" name="purple" />
+            <enum value="9" name="pink"/>
+            <enum value="10" name="brown"/>
+            <enum value="11" name="cyan"/>
+            <enum value="12" name="lime"/>
+        </attr>
+        <attr name="view_background" format="enum">
+            <enum value="11" name="transparent" />
+            <enum value="0" name="black"/>
+            <enum value="1" name="gray"/>
+            <enum value="2" name="white"/>
+            <enum value="3" name="red" />
+            <enum value="4" name="blue" />
+            <enum value="5" name="green" />
+            <enum value="6" name="yellow" />
+            <enum value="7" name="orange" />
+            <enum value="8" name="purple" />
+            <enum value="9" name="pink"/>
+            <enum value="10" name="brown"/>
+            <enum value="12" name="cyan"/>
+            <enum value="13" name="lime"/>
+        </attr>
+        <!-- Name of the method in this View's context to invoke when the linkText is
+             clicked. This name must correspond to a public method that takes
+             exactly one parameter of type View. For instance, if you specify
+             <code>link="sayHello"</code>, you must declare a
+             <code>public void sayHello(View v)</code> method of your context
+             (typically, your Activity). -->
+        <attr name="url" format="string"/>
+        <attr name="view_font" format="enum">
+            <enum name="canterbury" value="0"/>
+            <enum name="josefin_sans_bold" value="1"/>
+            <enum name="josefin_sans_bold_italics" value="2"/>
+            <enum name="josefin_sans_extra_bold" value="3"/>
+            <enum name="josefin_sans_extra_bold_italics" value="4"/>
+            <enum name="josefin_sans_italics" value="5"/>
+            <enum name="josefin_sans_light" value="6"/>
+            <enum name="josefin_sans_light_italics" value="7"/>
+            <enum name="josefin_sans_regular" value="8"/>
+            <enum name="josefin_sans_semi_bold" value="9"/>
+            <enum name="josefin_sans_semi_bold_italics" value="10"/>
+            <enum name="pajamas_pants" value="11"/>
+            <enum name="pajamas_pants_bold" value="12"/>
+            <enum name="pajamas_pants_light" value="13"/>
+            <enum name="rowdies_bold" value="14"/>
+            <enum name="rowdies_light" value="15"/>
+            <enum name="rusthina" value="16"/>
+            <enum name="the_artisan_marker_serif" value="17"/>
+            <enum name="tresdias" value="18"/>
+        </attr>
+        <attr name="font_family" format="enum">
+            <enum name="sanserif" value="0"/>
+            <enum name="serif" value="1"/>
+            <enum name="cursive" value="2" />
+            <enum name="casual" value="3"/>
+            <enum name="monospace" value="4"/>
+        </attr>
+        <attr name="android:text"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColorLink"/>
+        <attr name="view_font_style" format="enum">
+            <enum name="bold" value="0"/>
+            <enum name="italic" value="1"/>
+            <enum name="normal" value="2"/>
+            <enum name="bold_italic" value="3"/>
+        </attr>
+        <attr name="view_width" format="dimension"/>
+        <attr name="view_height" format="dimension"/>
+        <attr name="android:typeface"/>
+        <attr name="alignment" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="top_right" value="1"/>
+            <enum name="top_left" value="2"/>
+            <enum name="bottom_right" value="3"/>
+            <enum name="bottom_left" value="4"/>
+            <enum name="center_left" value="5"/>
+            <enum name="center_right" value="6"/>
+            <enum name="top_center" value="7"/>
+            <enum name="bottom_center" value="8"/>
+        </attr>
+        <attr name="horizontal_alignment" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="vertical_alignment" format="enum">
+            <enum name="center" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="bottom" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="StyledEditor">
+        <attr name="link"/>
+        <attr name="subColorText"/>
+        <attr name="subFontText"/>
+        <attr name="subSizeText"/>
+        <attr name="subColor"/>
+        <attr name="subSize"/>
+        <attr name="subFont"/>
+        <attr name="view_padding"/>
+        <attr name="view_padding_top"/>
+        <attr name="view_padding_end"/>
+        <attr name="view_padding_start"/>
+        <attr name="view_padding_bottom"/>
+        <attr name="view_padding_vertical"/>
+        <attr name="view_padding_horizontal"/>
+        <attr name="scale"/>
+        <attr name="scale_x"/>
+        <attr name="scale_y"/>
+        <attr name="textColor"/>
+        <attr name="textColorAlpha"/>
+        <attr name="hintColorAlpha"/>
+        <attr name="view_background"/>
+        <!-- Name of the method in this View's context to invoke when the linkText is
+             clicked. This name must correspond to a public method that takes
+             exactly one parameter of type View. For instance, if you specify
+             <code>link="sayHello"</code>, you must declare a
+             <code>public void sayHello(View v)</code> method of your context
+             (typically, your Activity). -->
+        <attr name="url"/>
+        <attr name="urlText"/>
+        <attr name="view_font"/>
+        <attr name="font_family"/>
+        <attr name="android:hint"/>
+        <attr name="android:textColorHint"/>
+        <attr name="android:text"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColorLink"/>
+        <attr name="view_font_style"/>
+        <attr name="android:typeface"/>
+        <attr name="horizontal_alignment"/>
+        <attr name="view_width"/>
+        <attr name="view_height"/>
+        <attr name="alignment"/>
+        <attr name="autoComplete_format" format="enum">
+            <enum name="coding" value="0"/>
+            <enum name="colon" value="1"/>
+            <enum name="comma" value="2"/>
+            <enum name="dot" value="3"/>
+            <enum name="semicolon" value="4"/>
+            <enum name="space" value="5"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ScrollingText">
+        <attr name="link"/>
+        <attr name="subColorText"/>
+        <attr name="subFontText"/>
+        <attr name="subSizeText"/>
+        <attr name="subColor"/>
+        <attr name="subSize"/>
+        <attr name="subFont"/>
+        <attr name="view_padding"/>
+        <attr name="view_padding_top"/>
+        <attr name="view_padding_end"/>
+        <attr name="view_padding_start"/>
+        <attr name="view_padding_bottom"/>
+        <attr name="view_padding_vertical"/>
+        <attr name="view_padding_horizontal"/>
+        <attr name="scale"/>
+        <attr name="scale_x"/>
+        <attr name="scale_y"/>
+        <attr name="textColor"/>
+        <attr name="textColorAlpha"/>
+        <attr name="hintColorAlpha"/>
+        <attr name="view_background"/>
+        <!-- Name of the method in this View's context to invoke when the linkText is
+             clicked. This name must correspond to a public method that takes
+             exactly one parameter of type View. For instance, if you specify
+             <code>link="sayHello"</code>, you must declare a
+             <code>public void sayHello(View v)</code> method of your context
+             (typically, your Activity). -->
+        <attr name="url"/>
+        <attr name="urlText"/>
+        <attr name="view_font"/>
+        <attr name="font_family"/>
+        <attr name="android:hint"/>
+        <attr name="android:textColorHint"/>
+        <attr name="android:text"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColorLink"/>
+        <attr name="view_font_style"/>
+        <attr name="android:typeface"/>
+        <attr name="view_width"/>
+        <attr name="view_height"/>
+        <attr name="scrollable" format="boolean" />
+        <attr name="alignment"/>
+    </declare-styleable>
+
+    <declare-styleable name="StyledScrollableEditor">
+        <attr name="link"/>
+        <attr name="subColorText"/>
+        <attr name="subFontText"/>
+        <attr name="subSizeText"/>
+        <attr name="subColor"/>
+        <attr name="subSize"/>
+        <attr name="subFont"/>
+        <attr name="view_padding"/>
+        <attr name="view_padding_top"/>
+        <attr name="view_padding_end"/>
+        <attr name="view_padding_start"/>
+        <attr name="view_padding_bottom"/>
+        <attr name="view_padding_vertical"/>
+        <attr name="view_padding_horizontal"/>
+        <attr name="scale"/>
+        <attr name="scale_x"/>
+        <attr name="scale_y"/>
+        <attr name="textColor"/>
+        <attr name="textColorAlpha"/>
+        <attr name="hintColorAlpha"/>
+        <attr name="view_background"/>
+        <!-- Name of the method in this View's context to invoke when the linkText is
+             clicked. This name must correspond to a public method that takes
+             exactly one parameter of type View. For instance, if you specify
+             <code>link="sayHello"</code>, you must declare a
+             <code>public void sayHello(View v)</code> method of your context
+             (typically, your Activity). -->
+        <attr name="url"/>
+        <attr name="view_font"/>
+        <attr name="font_family"/>
+        <attr name="android:text"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColorLink"/>
+        <attr name="view_font_style"/>
+        <attr name="android:typeface"/>
+        <attr name="horizontal_alignment"/>
+        <attr name="view_width"/>
+        <attr name="view_height"/>
+        <attr name="alignment"/>
+        <attr name="scroll_direction"/>
+    </declare-styleable>
+
+    <declare-styleable name="StyledScrollableText">
+        <attr name="link"/>
+        <attr name="subColorText"/>
+        <attr name="subFontText"/>
+        <attr name="subSizeText"/>
+        <attr name="subColor"/>
+        <attr name="subSize"/>
+        <attr name="subFont"/>
+        <attr name="view_padding"/>
+        <attr name="view_padding_top"/>
+        <attr name="view_padding_end"/>
+        <attr name="view_padding_start"/>
+        <attr name="view_padding_bottom"/>
+        <attr name="view_padding_vertical"/>
+        <attr name="view_padding_horizontal"/>
+        <attr name="scale"/>
+        <attr name="scale_x"/>
+        <attr name="scale_y"/>
+        <attr name="textColor"/>
+        <attr name="textColorAlpha"/>
+        <attr name="hintColorAlpha"/>
+        <attr name="view_background"/>
+        <!-- Name of the method in this View's context to invoke when the linkText is
+             clicked. This name must correspond to a public method that takes
+             exactly one parameter of type View. For instance, if you specify
+             <code>link="sayHello"</code>, you must declare a
+             <code>public void sayHello(View v)</code> method of your context
+             (typically, your Activity). -->
+        <attr name="url"/>
+        <attr name="view_font"/>
+        <attr name="font_family"/>
+        <attr name="android:text"/>
+        <attr name="android:textColor"/>
+        <attr name="android:textSize"/>
+        <attr name="android:textColorLink"/>
+        <attr name="view_font_style"/>
+        <attr name="android:typeface"/>
+        <attr name="horizontal_alignment"/>
+        <attr name="view_width"/>
+        <attr name="view_height"/>
+        <attr name="alignment"/>
+        <attr name="scroll_direction" format="enum">
+            <enum name="vertical" value="0" />
+            <enum name="horizontal" value="1" />
+            <enum name="both" value="2" />
+        </attr>
+    </declare-styleable>
+
+</resources>
