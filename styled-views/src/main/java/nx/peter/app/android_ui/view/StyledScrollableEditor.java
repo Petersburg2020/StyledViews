@@ -171,6 +171,8 @@ public class StyledScrollableEditor extends AStyledScrollableView<StyledScrollab
     @Override
     protected void reset() {
         super.reset();
+        setText("");
+        setHint("Type here...");
     }
 
     @Override

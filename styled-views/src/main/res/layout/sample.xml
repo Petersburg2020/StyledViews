@@ -20,7 +20,18 @@
             android:textColor="@color/white"
             android:textColorLink="@color/red"
             app:view_background="black"
-            android:layout_width="wrap_content"
+            android:layout_width="380dp"
+            android:layout_height="120dp"/>
+
+    <nx.peter.app.android_ui.view.StyledEditor
+            app:x="10dp"
+            app:y="261dp"
+            android:textColorHint="@color/grey"
+            android:hint="Say hello"
+            android:textSize="22sp"
+            android:textColor="@color/white"
+            app:view_background="black"
+            android:layout_width="350dp"
             android:layout_height="120dp"/>
 
 </nx.peter.app.android_ui.view.AbsoluteLayout>

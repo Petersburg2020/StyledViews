@@ -39,12 +39,11 @@ abstract class AStyledScrollableView<I extends AStyledScrollableView, T extends 
     @Override
     protected void reset() {
         setPadding(0);
-        setScrollDirection(Direction.Vertical);
+        // setScrollDirection(Direction.Vertical);
         setText("Try google this color, icon icn, underline, large-text, with emphasis and click here!");
-        addLinks((view, text, link) -> {
-        }, "here");
+        addLinks((view, text, link) -> {}, "here");
         addUrlLinks("https://google.com", "google");
-        addSubSizes((int) (getTextSize() * 1.05f), "large-text");
+        addSubSizes((int) (getTextSize() * 1.2f), "large-text");
         addSubImages(R.drawable.no_image, "icn");
         addSubFonts(Font.Style.Bold, "emphasis");
         addUnderlines("underline");
@@ -276,6 +275,13 @@ abstract class AStyledScrollableView<I extends AStyledScrollableView, T extends 
 
         if (propertyChangedListener != null)
             propertyChangedListener.onPropertyChanged(this, new PropertyChange<>(PROPERTY_TEXT, oldData, getText()));
+    }
+
+    @Override
+    public void justifyText(boolean justify) {
+        vView.justifyText(justify);
+        hView.justifyText(justify);
+        vhView.justifyText(justify);
     }
 
     public void setScrollDirection(@NonNull Direction direction) {
@@ -520,6 +526,11 @@ abstract class AStyledScrollableView<I extends AStyledScrollableView, T extends 
     @Override
     public int getPaddingRight() {
         return vView.getPaddingRight();
+    }
+
+    @Override
+    public ViewGroup.LayoutParams getLayoutParams() {
+        return vView.getLayoutParams();
     }
 
     @Override

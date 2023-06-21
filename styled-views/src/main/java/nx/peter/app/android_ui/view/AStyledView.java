@@ -5,12 +5,14 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.graphics.text.LineBreaker;
 import android.os.Build;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.ColorInt;
 import androidx.annotation.IntRange;
@@ -87,49 +89,123 @@ abstract class AStyledView<A extends AStyledView, T extends TextView> extends AV
 
     protected void setFont(int index) {
         switch (index) {
-            case 0: setFont(Font.CANTERBURY); break;
-            case 1: setFont(Font.JOSEFIN_SANS_BOLD); break;
-            case 2: setFont(Font.JOSEFIN_SANS_BOLD_ITALIC); break;
-            case 3: setFont(Font.JOSEFIN_SANS_EXTRA_BOLD); break;
-            case 4: setFont(Font.JOSEFIN_SANS_EXTRA_BOLD_ITALIC); break;
-            case 5: setFont(Font.JOSEFIN_SANS_ITALIC); break;
-            case 6: setFont(Font.JOSEFIN_SANS_LIGHT); break;
-            case 7: setFont(Font.JOSEFIN_SANS_LIGHT_ITALIC); break;
-            case 8: setFont(Font.JOSEFIN_SANS_REGULAR); break;
-            case 9: setFont(Font.JOSEFIN_SANS_SEMI_BOLD); break;
-            case 10: setFont(Font.JOSEFIN_SANS_SEMI_BOLD_ITALIC); break;
-            case 11: setFont(Font.PAJAMA_PANTS); break;
-            case 12: setFont(Font.PAJAMA_PANTS_BOLD); break;
-            case 13: setFont(Font.PAJAMA_PANTS_LIGHT); break;
-            case 14: setFont(Font.ROWDIES_BOLD); break;
-            case 15: setFont(Font.ROWDIES_REGULAR); break;
-            case 16: setFont(Font.RUSTHINA); break;
-            case 17: setFont(Font.THE_ARTISAN_MARKER_SERIF); break;
-            case 18: setFont(Font.TRESDIAS);
+            case 0:
+                setFont(Font.CANTERBURY);
+                break;
+            case 1:
+                setFont(Font.JOSEFIN_SANS_BOLD);
+                break;
+            case 2:
+                setFont(Font.JOSEFIN_SANS_BOLD_ITALIC);
+                break;
+            case 3:
+                setFont(Font.JOSEFIN_SANS_EXTRA_BOLD);
+                break;
+            case 4:
+                setFont(Font.JOSEFIN_SANS_EXTRA_BOLD_ITALIC);
+                break;
+            case 5:
+                setFont(Font.JOSEFIN_SANS_ITALIC);
+                break;
+            case 6:
+                setFont(Font.JOSEFIN_SANS_LIGHT);
+                break;
+            case 7:
+                setFont(Font.JOSEFIN_SANS_LIGHT_ITALIC);
+                break;
+            case 8:
+                setFont(Font.JOSEFIN_SANS_REGULAR);
+                break;
+            case 9:
+                setFont(Font.JOSEFIN_SANS_SEMI_BOLD);
+                break;
+            case 10:
+                setFont(Font.JOSEFIN_SANS_SEMI_BOLD_ITALIC);
+                break;
+            case 11:
+                setFont(Font.PAJAMA_PANTS);
+                break;
+            case 12:
+                setFont(Font.PAJAMA_PANTS_BOLD);
+                break;
+            case 13:
+                setFont(Font.PAJAMA_PANTS_LIGHT);
+                break;
+            case 14:
+                setFont(Font.ROWDIES_BOLD);
+                break;
+            case 15:
+                setFont(Font.ROWDIES_REGULAR);
+                break;
+            case 16:
+                setFont(Font.RUSTHINA);
+                break;
+            case 17:
+                setFont(Font.THE_ARTISAN_MARKER_SERIF);
+                break;
+            case 18:
+                setFont(Font.TRESDIAS);
         }
     }
 
     protected void addSubFonts(int index, String text) {
         switch (index) {
-            case 0: addSubFonts(Font.CANTERBURY, text); break;
-            case 1: addSubFonts(Font.JOSEFIN_SANS_BOLD, text); break;
-            case 2: addSubFonts(Font.JOSEFIN_SANS_BOLD_ITALIC, text); break;
-            case 3: addSubFonts(Font.JOSEFIN_SANS_EXTRA_BOLD, text); break;
-            case 4: addSubFonts(Font.JOSEFIN_SANS_EXTRA_BOLD_ITALIC, text); break;
-            case 5: addSubFonts(Font.JOSEFIN_SANS_ITALIC, text); break;
-            case 6: addSubFonts(Font.JOSEFIN_SANS_LIGHT, text); break;
-            case 7: addSubFonts(Font.JOSEFIN_SANS_LIGHT_ITALIC, text); break;
-            case 8: addSubFonts(Font.JOSEFIN_SANS_REGULAR, text); break;
-            case 9: addSubFonts(Font.JOSEFIN_SANS_SEMI_BOLD, text); break;
-            case 10: addSubFonts(Font.JOSEFIN_SANS_SEMI_BOLD_ITALIC, text); break;
-            case 11: addSubFonts(Font.PAJAMA_PANTS, text); break;
-            case 12: addSubFonts(Font.PAJAMA_PANTS_BOLD, text); break;
-            case 13: addSubFonts(Font.PAJAMA_PANTS_LIGHT, text); break;
-            case 14: addSubFonts(Font.ROWDIES_BOLD, text); break;
-            case 15: addSubFonts(Font.ROWDIES_REGULAR, text); break;
-            case 16: addSubFonts(Font.RUSTHINA, text); break;
-            case 17: addSubFonts(Font.THE_ARTISAN_MARKER_SERIF, text); break;
-            case 18: addSubFonts(Font.TRESDIAS, text);
+            case 0:
+                addSubFonts(Font.CANTERBURY, text);
+                break;
+            case 1:
+                addSubFonts(Font.JOSEFIN_SANS_BOLD, text);
+                break;
+            case 2:
+                addSubFonts(Font.JOSEFIN_SANS_BOLD_ITALIC, text);
+                break;
+            case 3:
+                addSubFonts(Font.JOSEFIN_SANS_EXTRA_BOLD, text);
+                break;
+            case 4:
+                addSubFonts(Font.JOSEFIN_SANS_EXTRA_BOLD_ITALIC, text);
+                break;
+            case 5:
+                addSubFonts(Font.JOSEFIN_SANS_ITALIC, text);
+                break;
+            case 6:
+                addSubFonts(Font.JOSEFIN_SANS_LIGHT, text);
+                break;
+            case 7:
+                addSubFonts(Font.JOSEFIN_SANS_LIGHT_ITALIC, text);
+                break;
+            case 8:
+                addSubFonts(Font.JOSEFIN_SANS_REGULAR, text);
+                break;
+            case 9:
+                addSubFonts(Font.JOSEFIN_SANS_SEMI_BOLD, text);
+                break;
+            case 10:
+                addSubFonts(Font.JOSEFIN_SANS_SEMI_BOLD_ITALIC, text);
+                break;
+            case 11:
+                addSubFonts(Font.PAJAMA_PANTS, text);
+                break;
+            case 12:
+                addSubFonts(Font.PAJAMA_PANTS_BOLD, text);
+                break;
+            case 13:
+                addSubFonts(Font.PAJAMA_PANTS_LIGHT, text);
+                break;
+            case 14:
+                addSubFonts(Font.ROWDIES_BOLD, text);
+                break;
+            case 15:
+                addSubFonts(Font.ROWDIES_REGULAR, text);
+                break;
+            case 16:
+                addSubFonts(Font.RUSTHINA, text);
+                break;
+            case 17:
+                addSubFonts(Font.THE_ARTISAN_MARKER_SERIF, text);
+                break;
+            case 18:
+                addSubFonts(Font.TRESDIAS, text);
         }
     }
 
@@ -227,8 +303,6 @@ abstract class AStyledView<A extends AStyledView, T extends TextView> extends AV
     }
 
 
-
-
     public void setHint(@NonNull CharSequence hint) {
         view.setHint(hint);
     }
@@ -277,6 +351,12 @@ abstract class AStyledView<A extends AStyledView, T extends TextView> extends AV
 
         if (propertyChangedListener != null)
             propertyChangedListener.onPropertyChanged(this, new PropertyChange<>(PROPERTY_TEXT, oldData, getText()));
+    }
+
+    @Override
+    public void justifyText(boolean justify) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+            view.setJustificationMode(justify ? LineBreaker.JUSTIFICATION_MODE_INTER_WORD : LineBreaker.JUSTIFICATION_MODE_NONE);
     }
 
     @Override
@@ -548,6 +628,15 @@ abstract class AStyledView<A extends AStyledView, T extends TextView> extends AV
         view.setVerticalScrollbarPosition(position);
     }
 
+    @Override
+    public ViewGroup.LayoutParams getLayoutParams() {
+        return view.getLayoutParams();
+    }
+
+    @Override
+    public void setLayoutParams(ViewGroup.LayoutParams params) {
+        view.setLayoutParams(params);
+    }
 
     @Override
     public void setLineHeight(int height) {

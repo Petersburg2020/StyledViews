@@ -325,6 +325,11 @@ public class StyledImageText extends AView<StyledImageText> implements StyledVie
     }
 
     @Override
+    public void justifyText(boolean justify) {
+        view.justifyText(justify);
+    }
+
+    @Override
     public void appendText(@NonNull CharSequence text) {
         view.appendText(text);
     }

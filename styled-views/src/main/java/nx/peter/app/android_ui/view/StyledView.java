@@ -52,6 +52,15 @@ public interface StyledView<V extends View> extends IView<V> {
 
     void clearText();
 
+    /**
+     * Only available for<BR>
+     * <code>
+     *     Build.VERSION_CODES.Q = 29
+     * </code>
+     * @param justify justifies text if it's true
+     */
+    void justifyText(boolean justify);
+
     void setMaxLine(int lines);
 
     void setLinksColor(@ColorInt int color);
